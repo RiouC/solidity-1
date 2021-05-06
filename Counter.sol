@@ -6,7 +6,7 @@ contract Counter {
     mapping(address => bool) _owners;
     uint256 private _counter;
     uint256 private _step;
-    uint256 private constant _MAX_BOUND_UINT256 = 2**256 - 1;
+    uint256 private constant _MAX_BOUND_UINT256 = type(uint256).max;  // type(uint256).max = 2**256 - 1
 
     constructor(uint256 step_, address firstOwner_) {
 	_owners[firstOwner_] = true;
